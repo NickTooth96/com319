@@ -19,7 +19,7 @@ let mainContainer2 = document.getElementById("myBreed");
 for (let element of data[name]) {
 console.log(element);
 let div2 = document.createElement("div");
-div2.innerHTML = `${element["productId"]} : ${element["name"]} : ${element["lifespan"]} : ${element["shortDescription"]} <br>`;
+div2.innerHTML = `${element["productId"]} : ${element["name"]} : ${element["lifespan"]} : ${element["shortDescription"]} <br> ${element["pic"]}`;
 mainContainer.appendChild(div2);
 }
 } // end of for
