@@ -1,6 +1,6 @@
 fetch('data.json')
 .then(function (response) {
-return response.json();
+    return response.json();
 })
 .then(function (data) {
 appendData(data);
