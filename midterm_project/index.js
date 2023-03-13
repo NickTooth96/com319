@@ -1,3 +1,4 @@
+
 fetch('data.json')
 .then(function (response) {
     return response.json();
@@ -9,19 +10,11 @@ appendData(data);
 console.log('error:' + err);
 })
 function appendData(data) {
-let mainContainer = document.getElementById("myData");
-for (let name in data) {
-let div = document.createElement("div");
-div.innerHTML = `<br> <br> <h2> ${name} </h2>`;
-mainContainer.appendChild(div);
 
-let mainContainer2 = document.getElementById("myBreed");
-for (let element of data[name]) {
-console.log(element);
-let div2 = document.createElement("div");
-div2.innerHTML = `${element["productId"]} : ${element["name"]} : ${element["lifespan"]} : ${element["shortDescription"]} <br> ${element["pic"]}`;
-mainContainer.appendChild(div2);
-}
-} // end of for
+    var dog_001 = document.getElementById("dog_001").innerHTML = "<strong>" + data.Dogs[0].name + "</strong> " + "<br><strong>Lifespan: </strong>" + data.Dogs[0].lifespan + "<br>" + data.Dogs[0].shortDescription;
+    var dog_002 = document.getElementById("dog_002").innerHTML = "<strong>" + data.Dogs[1].name + "</strong> " + "<br><strong>Lifespan: </strong>" + data.Dogs[1].lifespan + "<br>" + data.Dogs[1].shortDescription;
+    var dog_003 = document.getElementById("dog_003").innerHTML = "<strong>" + data.Dogs[2].name + "</strong> " + "<br><strong>Lifespan: </strong>" + data.Dogs[2].lifespan + "<br>" + data.Dogs[2].shortDescription;
+    var dog_004 = document.getElementById("dog_004").innerHTML = "<strong>" + data.Dogs[3].name + "</strong> " + "<br><strong>Lifespan: </strong>" + data.Dogs[3].lifespan + "<br>" + data.Dogs[3].shortDescription;
+    var dog_005 = document.getElementById("dog_005").innerHTML = "<strong>" + data.Dogs[4].name + "</strong> " + "<br><strong>Lifespan: </strong>" + data.Dogs[4].lifespan + "<br>" + data.Dogs[4].shortDescription;
 
-} // end of function appendData
+    }
