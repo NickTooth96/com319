@@ -1,0 +1,13 @@
+header {
+    font-size: 42px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.nav-bar {
+    font-size: 22px;
+    color: black;
+    text-align: center;
+}
