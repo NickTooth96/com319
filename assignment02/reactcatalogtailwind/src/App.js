@@ -1,6 +1,7 @@
 import './App.css';
 import logo from './logo.png';
 import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.css";
 import { Products } from "./Products"
 import { Categories } from "./Categories"
 
@@ -8,6 +9,101 @@ export const App = () => {
   console.log("Step 1: After reading file :");
   const [ProductsCategory, setProductsCategory] = useState(Products);
   const [query, setQuery] = useState('');
+
+
+
+  function handleClick(tag) {
+    console.log("Step 4 : in handleClick", tag);
+    let filtered = Products.filter(cat => cat.category === tag);
+    setProductsCategory(filtered);
+    console.log("Step 5 : ", Products.length, ProductsCategory.length);
+  }
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+    console.log("Step 6 : in handleChange, Target Value :", e.target.value, " QueryValue : ", query);
+    const results = Products.filter(eachProduct => {
+      if (e.target.value === "") return ProductsCategory;
+      return eachProduct.title.toLowerCase().includes(e.target.value.toLowerCase())
+    });
+    setProductsCategory(results);
+  }
+
+
+
+
+  const [cart, setCart] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
+
+  const addToCart = (el) => {
+      setCart([...cart, el]);
+  };
+
+  const removeFromCart = (el) => {
+      let itemFound = false;
+      const updatedCart = cart.filter((cartItem) => {
+          if (cartItem.id === el.id && !itemFound) {
+              itemFound = true;
+              return false;
+          }
+          return true;
+      });
+      if (itemFound) {
+          setCart(updatedCart);
+      }
+  };
+
+  const cartItems = cart.map((el) => (
+      <div key={el.id}>
+          <img class=
+              "img-fluid" src={el.image} width={30} />
+          {el.title}
+          ${el.price}
+      </div>
+  ));
+
+  const listItems = Products.map((el) => (
+      // PRODUCT
+      <div class="row border-top border-bottom" key={el.id}>
+          <div class="row main align-items-center">
+              <div class="col-2">
+                  <img class="img-fluid" src={el.image} />
+              </div>
+              <div class="col">
+                  <div class="row text-muted">{el.title}</div>
+                  <div class="row">{el.category}</div>
+              </div>
+              <div class="col">
+                  <button type="button" variant="light" onClick={() => removeFromCart(el)} > - </button>{" "}
+                  <button type="button" variant="light" onClick={() => addToCart(el)}> + </button>
+              </div>
+              <div class="col">
+                  ${el.price} <span class="close">&#10005;</span>{howManyofThis(el.id)}
+              </div>
+          </div>
+      </div>
+  ));
+
+  function howManyofThis(id) {
+      let hmot = cart.filter((cartItem) => cartItem.id === id);
+      return hmot.length;
+  }
+
+
+  // useEffect(() => {
+  //     total();
+  // }, [cart]);
+
+  // const total = () => {
+  //     let totalVal = 0;
+  //     for (let i = 0; i < cart.length; i++) {
+  //         totalVal += cart[i].price;
+  //     }
+  //     setCartTotal(totalVal);
+  // };
+
+
+
+
   const render_products = (ProductsCategory) => {
     return <div className='category-section fixed'>
       {console.log("Step 3 : in render_products ")}
@@ -41,26 +137,19 @@ export const App = () => {
               </div>
               <p className="text-sm font-medium text-green-600">${product.price}</p>
             </div>
+            {/* <div>{listItems}</div> */}
           </div>
         ))}
       </div>
     </div>
   }
-  function handleClick(tag) {
-    console.log("Step 4 : in handleClick", tag);
-    let filtered = Products.filter(cat => cat.category === tag);
-    setProductsCategory(filtered);
-    console.log("Step 5 : ", Products.length, ProductsCategory.length);
-  }
-  const handleChange = (e) => {
-    setQuery(e.target.value);
-    console.log("Step 6 : in handleChange, Target Value :", e.target.value, " QueryValue : ", query);
-    const results = Products.filter(eachProduct => {
-      if (e.target.value === "") return ProductsCategory;
-      return eachProduct.title.toLowerCase().includes(e.target.value.toLowerCase())
-    });
-    setProductsCategory(results);
-  }
+
+  
+  
+
+
+
+
   return (
     <div className="flex fixed flex-row">
       {console.log("Step 2 : Return App :", Products.length, ProductsCategory.length)}
@@ -94,6 +183,5 @@ export const App = () => {
     </div>
   );
 }
-
 
 export default App
