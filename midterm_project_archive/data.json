@@ -1,61 +1,41 @@
-{ "Dogs": [
+[
     {
-        "productId": "dog_001",
-        "name": "Corgi",
-        "lifespan": "12-15 years",
-        "shortDescription": "A small, friendly, short-legged beast best known for being friends with Queen Elizabeth II."
+        "_id": 1,
+        "name": "Charlie",
+        "breed": "Corgi",
+        "age": "4 years",
+        "shortDescription": "Charlie is a calm, even tempered dog who gets along well with children and other animals.",
+        "image": ""
     },
     {
-        "productId": "dog_002",
-        "name": "Dalmatian",
-        "lifespan": "11-13 years",
-        "shortDescription": "Well known as Firehouse Dogs, Dalmatians have a distinctive white coat with black spots."
+        "_id": 2,
+        "name": "Rover",
+        "breed": "Dalmatian",
+        "age": "8 months",
+        "shortDescription": "Rover is high-strung and full of energy.",
+        "image": ""
     },{
-        "productId": "dog_003",
-        "name": "German Shepard",
-        "lifespan": "9-13 years",
-        "shortDescription": "A medium to large dog bred as a working dog. Also known as Alsatian, German Shepards are very recognizable. "
+        "_id": 3,
+        "name": "Spot",
+        "breed": "German Shepard",
+        "age": "8 years",
+        "shortDescription": "Spot is very sweet and loves to cuddle.",
+        "image": ""
     },
     {
-        "productId": "dog_004",
-        "name": "Golden Retriever",
-        "lifespan": "10-12 year",
-        "shortDescription": "A medium to large dog bred as a retriever for fowl hunting. They are wll known as friendly and energetic dogs and well loved for their golden coat."
+        "_id": 4,
+        "name": "Nora",
+        "breed": "Golden Retriever",
+        "age": "3 months",
+        "shortDescription": "Nora is an adorable and energetic puppy.",
+        "image": "https://mcdn.wallpapersafari.com/medium/67/58/lR4Gsh.jpg"
     },
     {
-        "productId": "dog_005",
-        "name": "Husky",
-        "lifespan": "12-14 years",
-        "shortDescription": "A medium breed of working dog. Well known for their thick coat and distinctive markings."
+        "_id": 5,
+        "name": "Balto",
+        "breed": "Husky",
+        "age": "5 years",
+        "shortDescription": "Balto loves people and the outdoors.",
+        "image": ""
     }  
-],
-"Cats": [
-    {
-        "productId": "cat_001",
-        "name": "Bengal",
-        "lifespan": "10-16 years",
-        "shortDescription": "A larger than average domesticated cat. Known for having rosette markings similar to a leapord."
-    },
-    {
-        "productId": "cat_002",
-        "name": "Maine Coon",
-        "lifespan": "9-15 years",
-        "shortDescription": "The largest breed of domesticated cat. Known to grow much larger than average cats. Can grow to nearly four feet long from head to tail."
-    },{
-        "productId": "cat_003",
-        "name": "Persian",
-        "lifespan": "12-17 years",
-        "shortDescription": "A very soft breed of domesticated cat. Known for the Grumpy Cat meme."
-    },
-    {
-        "productId": "cat_004",
-        "name": "Russian Blue",
-        "lifespan": "10-20 years",
-        "shortDescription": "An average sized breed of domesticated cat. Russian Blues have silky fur in a thick coat. This makes them good cats for people with alergies since their coat keeps the allergens clos to the skin."
-    },
-    {
-        "productId": "cat_005",
-        "name": "Siamese",
-        "lifespan": "8-12 years",
-        "shortDescription": "A very pretty cat breed, Known for their bright blue eyes and very distinctive appearance."
-    } ]}
+]
